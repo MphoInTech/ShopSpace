@@ -1,0 +1,486 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #1daff5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin-top: 60px;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    margin-top: -60px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: bolder;
+}
+
+.hero-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 300;
+    font-weight: bolder;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color:white;
+}
+
+.testimonial-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-group {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial-group.active {
+    display: block;
+    opacity: 1;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 2rem;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--secondary-color);
+}
+
+.testimonial-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.testimonial-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: black;
+}
+
+.rating {
+    margin: 10px 0;
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+
+.rating .star {
+    letter-spacing: 2px;
+}
+
+.rating-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.chat-input {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.user-message {
+    background: var(--secondary-color);
+    color: white;
+    margin-left: 20%;
+}
+
+.bot-message {
+    background: #f8f9fa;
+    margin-right: 20%;
+}
+
+.form-select, .btn {
+    height: 45px;
+}
+
+.property-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-info {
+    padding: 1rem;
+}
+
+.testimonials-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.testimonial-card {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.testimonial-card h4 {
+    margin-bottom: 5px;
+    color: black;
+}
+
+.rating {
+    color: #ffc107;
+    margin: 10px 0;
+}
+
+/* Navigation Styles */
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+}
+
+.nav-link i {
+    margin-right: 4px;
+}
+
+.nav-link[href="#advisor"] {
+    color: #6610f2;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.nav-link[href="#advisor"]:hover {
+    color: #007bff;
+}
+
+.nav-link[href="#advisor"] i {
+    font-size: 1.1em;
+}
+
+/* Agent Cards Styles */
+.agent-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.agent-card:hover {
+    transform: translateY(-5px);
+}
+
+.agent-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.agent-card h4 {
+    color: #333;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.agent-card p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: black;
+}
+
+.agent-card i {
+    color: #007bff;
+    margin-right: 5px;
+    color: black;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 40px 0;
+}
+
+footer h5 {
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Map Links Styles */
+.map-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.map-link {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: #1daff5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.map-link:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* Map Directions Button */
+.directions-btn {
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.directions-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.directions-btn i {
+    margin-right: 6px;
+}
+   
+.Welcome {
+    background-image: url('D:/ShopSpace Project/ShopSpaceCode/images/buildings2.jpg'); 
+    background-size: cover;
+    background-position: center;
+        color: white;
+        text-align: center;
+        padding: 200px ; 
+        margin-top: -60px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        
+}
+
+
+.welcome-container {
+    background-image: url('D:/ShopSpace Project/ShopSpaceCode/images/buildings2.jpg'); 
+    background-size: cover;
+    background-position: center;
+        color: white;
+        text-align: center;
+        padding: 200px ; 
+        margin-top: -60px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+            
+}
+    
+/* Welcome Message */
+
+h1 {
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #1daff5; /* Highlight color for ShopSpace */
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #1daff5; /* Dark background */
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    display: inline-block;
+    font-size: 18px;
+    font-family:sans-serif;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #2296c8;
+    border-radius: 5px;
+}
+
+/* Center the login button below the welcome message */
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust spacing */
+}
+
+/* Basic button styling */
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+/* Primary button */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    color: #fff;
+    transform: translateY(-2px); /* Slightly lift the button */
+}
+
+/* Success button */
+.btn-success {
+    background-color: #1daff5;
+    color: #fff;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #1daff5;
+    color: #fff;
+    transform: translateY(-2px); /* Slightly lift the button */
+}
+
+/* Button with margin-right (me-3) */
+.me-3 {
+    margin-right: 15px;
+}
+
+/* Button with larger text size for the search button */
+.flex-grow-1 {
+    width: 50%;
+}
+
+/* Button focus styles (when clicked or focused) */
+.btn:focus {
+    outline: none;  /* Remove the default outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);  /* Add a blue outline on focus */
+}
