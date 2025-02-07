@@ -1,3 +1,249 @@
+// Store location data (simplified example)
+const locationData = {
+    'Sandton': {
+        avgRent: 45000,
+        profitPotential: 'High',
+        footTraffic: 'Very High',
+        demographics: 'High-income professionals',
+        properties: [
+            {
+                type: 'retail',
+                price: 35152,
+                size: '150m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Sandton.jpg',
+                description: 'Prime retail property in Sandton, offering exceptional visibility and accessibility in a bustling commercial hub.'
+            },
+            
+        ]
+    },
+    'Rosebank Mall': {
+        avgRent: 35000,
+        profitPotential: 'High',
+        footTraffic: 'High',
+        demographics: 'Mixed, young professionals',
+        properties: [
+            {
+                type: 'retail',
+                price: 37500,
+                size: '120m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Rosebank.jpg',
+                description: 'Modern retail space in Rosebank Mall, combining high foot traffic with a vibrant shopping atmosphere.'
+            },
+            
+        ]
+    },
+    'Centurion': {
+        avgRent: 28000,
+        profitPotential: 'Medium-High',
+        footTraffic: 'Medium',
+        demographics: 'Mixed suburban, family-oriented',
+        properties: [
+            {
+                type: 'retail',
+                price: 30000,
+                size: '180m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Centurion N.jpg',
+                description: 'Prime retail space in Centurion, offering high visibility and easy access in a vibrant, rapidly growing area.'
+            },
+            
+        ]
+    },
+    'Ekurhuleni': {
+        avgRent: 22000,
+        profitPotential: 'Medium',
+        footTraffic: 'Medium',
+        demographics: 'Industrial, working class',
+        properties: [
+            {
+                type: 'retail',
+                price: 28000,
+                size: '200m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Ekurhuleni.jpg',
+                description: 'Versatile retail space in Ekurhuleni, strategically located in a bustling area with excellent connectivity.'
+            },
+            
+        ]
+    },
+    'Vanderbijlpark': {
+        avgRent: 18000,
+        profitPotential: 'Medium',
+        footTraffic: 'Medium-Low',
+        demographics: 'Industrial, student population',
+        properties: [
+            {
+                type: 'retail',
+                price: 16000,
+                size: '160m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Vanderbijlpark.jpg',
+                description: 'Spacious retail space in Vanderbijlpark, located in a busy commercial area with excellent visibility and foot traffic.'
+            },
+            
+        ]
+    },
+    'Germiston': {
+        avgRent: 20000,
+        profitPotential: 'Medium-High',
+        footTraffic: 'Medium',
+        demographics: 'Industrial, mixed residential',
+        properties: [
+           
+            {
+                type: 'retail',
+                price: 7500,
+                size: '140m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Germiston.jpg',
+                description: 'Strategically located retail space in Germiston, offering high exposure and easy access in a thriving commercial area.'
+            },
+
+        ]
+    },
+    'Alberton City Shopping Centre': {
+        avgRent: 21000,
+        profitPotential: 'Medium-High',
+        footTraffic: 'Medium',
+        demographics: 'Mixed residential, family-oriented',
+        properties: [
+            {
+                type: 'retail',
+                price: 18940,
+                size: '120m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Alberton.jpg',
+                description: 'Prime retail space in Alberton City Shopping Centre, situated in a high-traffic area with excellent visibility and easy access for shoppers.'
+            },
+            
+        ]
+    },
+    'Midrand City Shopping Centre': {
+        avgRent: 32000,
+        profitPotential: 'High',
+        footTraffic: 'Medium-High',
+        demographics: 'Mixed professional, tech hub',
+        properties: [
+            
+            {
+                type: 'retail',
+                price: 45000,
+                size: '180m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Midrand.jpg',
+                description: 'Spacious retail space in a bustling Midrand shopping center, offering high foot traffic and prime visibility in a central location.'
+            },
+            
+        ]
+    },
+    'Boksburg Civic Centre': {
+        avgRent: 23000,
+        profitPotential: 'Medium-High',
+        footTraffic: 'Medium',
+        demographics: 'Mixed industrial and residential',
+        properties: [
+            {
+                type: 'retail',
+                price: 20000,
+                size: '160m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/retail space Boksburg.jpg',
+                description: 'Prime retail space in Boksburg Civic Centre, located in a high-traffic area with excellent accessibility and exposure.'
+            }
+            
+        ]
+    },
+    'Vaal Mall': {
+        avgRent: 28000,
+        profitPotential: 'Medium',
+        footTraffic: 'High',
+        demographics: 'Mixed income shoppers',
+        properties: [
+            {
+                suburb: 'Vall Mall Area',
+                type: 'retail',
+                price: 12000,
+                size: '120m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/Vaal.jpg',
+                description: 'Strategic retail space in Vall Mall with excellent exposure to foot traffic.'
+            }
+        ]
+    },
+    'Protea Gardens Mall': {
+        avgRent: 25000,
+        profitPotential: 'Medium',
+        footTraffic: 'Medium-High',
+        demographics: 'Local community shoppers',
+        properties: [
+            {
+                suburb: 'Protea Gardens',
+                type: 'retail',
+                price: 9500,
+                size: '100m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/PGM.jpg',
+                description: 'Retail space in community-focused shopping center with loyal customer base.'
+            }
+        ]
+    },
+    'Krugersdorp Airport': {
+        avgRent: 30000,
+        profitPotential: 'Medium-High',
+        footTraffic: 'Medium',
+        demographics: 'Business travelers, logistics companies',
+        properties: [
+            {
+                suburb: 'Krugersdorp Airport',
+                type: 'retail',
+                price: 15000,
+                size: '200m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/Krugerdorp.jpg',
+                description: 'Commercial space near Krugersdorp Airport, ideal for aviation-related businesses.'
+            }
+        ]
+    },
+    'Kempton Park CBD': {
+        avgRent: 32000,
+        profitPotential: 'High',
+        footTraffic: 'Very High',
+        demographics: 'Mixed urban population',
+        properties: [
+            {
+                suburb: 'Kempton Park Central',
+                type: 'retail',
+                price: 18000,
+                size: '180m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/KPCBD.jpg',
+                description: 'Prime location in Kempton Park CBD with high visibility and accessibility.'
+            }
+        ]
+    },
+    'Johannesburg': {
+        avgRent: 40000,
+        profitPotential: 'Very High',
+        footTraffic: 'Very High',
+        demographics: 'Diverse urban population',
+        properties: [
+            {
+                suburb: 'CBD',
+                type: 'retail',
+                price: 22000,
+                size: '250m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/Jhb.jpg',
+                description: 'Premium commercial space in the heart of Johannesburg CBD.'
+            }
+        ]
+    },
+    'Pretoria': {
+        avgRent: 35000,
+        profitPotential: 'High',
+        footTraffic: 'High',
+        demographics: 'Government employees, students, professionals',
+        properties: [
+            {
+                suburb: 'Pretoria Central',
+                type: 'retail',
+                price: 19000,
+                size: '160m²',
+                image: 'D:/ShopSpace Project/ShopSpaceCode/images/PTA.jpg',
+                description: 'Well-positioned commercial property in Pretoria Central, close to government offices.'
+            }
+        ]
+    },
+};
+
 // Chat functionality
 const chatMessages = document.getElementById('chat-messages');
 const userInput = document.getElementById('user-input');
@@ -45,38 +291,37 @@ userInput.addEventListener('keypress', (e) => {
     }
 });
 
-// Load property data from locationData.json
-let locationData = {};
-fetch('locationData.json')
-  .then(response => response.json())
-  .then(data => { 
-    locationData = data;
-  })
-  .catch(err => console.error('Error loading location data:', err));
-
-function togglePowerBI() {
-const container = document.getElementById('powerbi-container');
-if (container.style.display === 'none' || container.style.display === '') {
-    container.style.display = 'block';
-} else {
-    container.style.display = 'none';
-}
-}
-
 // Property search functionality
 function searchProperties() {
     const propertyType = document.getElementById('propertyType').value;
-    const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
-    const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
-    
+    const minPrice = document.getElementById('minPrice').value ;
+    const maxPrice = document.getElementById('maxPrice').value ;
+
+    console.log('Searching with:', { propertyType, minPrice, maxPrice });
+
+    const minPriceNum = minPrice ? parseInt(minPrice) : undefined;
+    const maxPriceNum = maxPrice ? parseInt(maxPrice) : undefined;
+
+    console.log('Parsed Min and Max Prices:', { minPriceNum, maxPriceNum });
+
     let results = [];
     
     // Search through all locations
     for (const [location, data] of Object.entries(locationData)) {
+        console.log('Searching properties in location:', location);
+
         const matchingProperties = data.properties ? data.properties.filter(property => {
             const typeMatch = !propertyType || property.type === propertyType;
-            const priceMatch = property.price >= minPrice && 
-                             (maxPrice === Infinity || property.price <= maxPrice);
+            console.log('Checking property:', property);
+
+            const propertyPrice = parseInt(property.price);
+            console.log('Property Price:', propertyPrice);
+
+            const priceMatch = 
+            (minPriceNum === undefined || property.price >= minPriceNum) &&
+            (maxPriceNum === undefined || property.price <= maxPriceNum);
+            console.log('Price match result for', property.price, ':', priceMatch);
+
             return typeMatch && priceMatch;
         }) : [];
         
@@ -93,43 +338,39 @@ function searchProperties() {
 
 function displaySearchResults(results) {
     const resultsContainer = document.createElement('div');
-    resultsContainer.className = 'row mt-4 search-results';
+    resultsContainer.className = 'row mt-4';
     
     if (results.length === 0) {
         resultsContainer.innerHTML = '<div class="col-12"><p class="text-center">No properties found matching your criteria.</p></div>';
     } else {
         results.forEach(property => {
-            
             const propertyCard = document.createElement('div');
             propertyCard.className = 'col-md-4 mb-4';
             propertyCard.innerHTML = `
-                <div class="property-card">
-                    <img src="https://placehold.co/600x400" alt="${property.type} in ${property.location}">
-                    <div class="property-info">
-                        <h5>${property.location}</h5>
-                        <p>Type: ${property.type}</p>
-                        <p>Price: R${property.price}</p>
-                        <p>Size: ${property.size}</p>
-                        <p>Description: ${property.description}</p>
-                        <button class="btn btn-primary" onclick="contactAgent('${property.location}', ${property.price})">
-                            Contact Agent
-                        </button>
-                    </div>
+            <div class="property-card">
+                    <img src="${property.image}" alt="${property.type} in ${property.location}">
+                    <h5>${property.location}</h5>
+                    <p>Type: ${property.type}</p>
+                    <p>Price: R${property.price}</p>
+                    <p>Size: ${property.size}</p>
+                    <p>Description: ${property.description}</p>
+                    <button class="btn btn-primary" onclick="contactAgent('${property.location}', ${property.price})">
+                        Contact Agent
+                    </button>
                 </div>
             `;
             resultsContainer.appendChild(propertyCard);
         });
     }
     
-    // Remove any existing results
+    // Replace existing results if any
     const existingResults = document.querySelector('.search-results');
     if (existingResults) {
         existingResults.remove();
     }
     
-    // Append the results to the inner container of the search section for proper alignment.
-    const containerSection = document.querySelector('#search .container');
-    containerSection.appendChild(resultsContainer);
+    resultsContainer.className = 'row mt-4 search-results';
+    document.getElementById('search').appendChild(resultsContainer);
 }
 
 function contactAgent(location, price) {
@@ -173,20 +414,27 @@ function initTestimonialCarousel() {
 // Initialize testimonial carousel when page loads
 window.addEventListener('load', initTestimonialCarousel);
 
+
+// Function to handle logout
+function logout() {
+    localStorage.removeItem('currentUser'); // Clear user session
+    // Optionally, you can display a message or redirect the user
+    addMessage('You have been logged out.');
+    // Update UI to reflect logout
+    document.getElementById('logoutButton').style.display = 'none'; // Hide logout button
+}
+
+// Add logout button event listener
+const logoutButton = document.getElementById('logoutButton');
+if (logoutButton) {
+    logoutButton.addEventListener('click', logout);
+}
+
 // Initialize with a welcome message
 window.onload = () => {
     addMessage('Hello! I\'m your AI business advisor. I can help you find the perfect location for your business in Gauteng and provide estimates for rental costs and profit potential. What would you like to know?');
 };
 
-// Event listeners for sign up and sign in buttons
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-signUpButton.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
-});
-
-signInButton.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("searchButton").addEventListener("click", toggleSearchResults);
 });
