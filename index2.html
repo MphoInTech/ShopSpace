@@ -1,167 +1,389 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopSpace - Business Location Advisor</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">ShopSpace</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#search">Search</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Our Agents</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#advisor"><i class="bi bi-robot"></i> AI Advisor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="loginPage.html" onclick="logoutUser(event)"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+<meta charset="UTF-8">     
+<meta name="viewport" content="width=device-width, initial-scale=1.0">     
+<title>ShopSpace - Business Location Advisor</title>     
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">     
+<link rel="stylesheet" href="styles.css">      
+</head> 
+<body>     
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">         
+<div class="container">             
+<a class="navbar-brand" href="#">ShopSpace</a>             
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">                 
+<span class="navbar-toggler-icon"></span>             
+</button>             
+<div class="collapse navbar-collapse" id="navbarNav">                 
+<ul class="navbar-nav ms-auto">                     
+<li class="nav-item">                         
+<a class="nav-link" href="#home">Home</a>                     
+</li>                     
+<li class="nav-item">                         
+<a class="nav-link" href="#search">Search</a>                     
+</li>                     
+<li class="nav-item">                         
+<a class="nav-link" href="#testimonials">Testimonials</a>                     
+</li>                     
+<li class="nav-item">                         
+<a class="nav-link" href="#contact">Contact Our Agents</a>                     
+</li>                     
+<li class="nav-item">                         
+<a class="nav-link" href="#advisor"><i class="bi bi-robot"></i> AI Advisor</a>                     
+</li>                     
+<li class="nav-item">                         
+<a class="nav-link" href="loginPage.html" onclick="logoutUser(event)"><i class="bi bi-box-arrow-right"></i> Logout </a>  </li>                 
+</ul>             
+</div>         
+</div>     
+</nav> 
+<header id="home" class="hero-section">     
+<div class="container">         
+<h2>Find It, Rent It, Grow.</h2>         
+<p>The high-tech business advisor at your fingertips</p>     
+</div> 
+</header> 
+<section id="search" class="py-5">     
+<div class="container">         
+<h2 class="text-center mb-4">Search Properties</h2>         
+<div class="row">             
+<!-- First Row: 3 buttons -->             
+<div class="col-md-4">                 
+    <select class="form-select mb-3" id="propertyType" title="Select Property Type">                         
+        <option value="">Property Type</option>                         
+        <option value="retail">Retail Space</option>                 
+    </select>                 
+</div>                 
+<div class="col-md-4">                     
+    <select class="form-select mb-3" id="minPrice" title="Select Minimum Price">                         
+        <option value="">Min Price</option>                         
+        <option value="5000">R5,000</option>                         
+        <option value="10000">R10,000</option>                         
+        <option value="20000">R20,000</option> 
+        <option value="30000">R30,000</option>       
+    </select>                 
+</div>                 
+<div class="col-md-4">                     
+    <select class="form-select mb-3" id="maxPrice" title="Select Maximum Price">                         
+        <option value="">Max Price</option>                                                 
+        <option value="30000">R30,000</option>                         
+        <option value="40000">R40,000</option>                         
+        <option value="50000">R50,000</option> 
+        <option value="60000">R60,000</option>
+        
+    </select>                 
+</div>             
+<!-- Second Row: 3 buttons -->
+<div class="row mt-4">
+    <div class="col-md-4">
+        <button class="btn btn-primary w-100" onclick="searchProperties()">Search</button>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-success w-100" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=-26.7090053,27.8240039', '_blank')">Get Directions</button>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-success w-100" onclick="togglePowerBI()">Insights</button>
+    </div>
+</div>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero-section">
-        <div class="container">
-            <h2>Find It, Rent It, Grow.</h2>
-            <p>The high-tech business advisor at your fingertips</p>
-        </div>
-    </header>
-
-    <!-- Search Section -->
-    <section id="search" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Search Properties</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <select class="form-select mb-3" id="propertyType" title="Select Property Type">
-                        <option value="">Property Type</option>
-                        <option value="retail">Retail Space</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <select class="form-select mb-3" id="minPrice" title="Select Minimum Price">
-                        <option value="">Min Price</option>
-                        <option value="5000">R5,000</option>
-                        <option value="10000">R10,000</option>
-                        <option value="20000">R20,000</option>
-                        <option value="50000">R50,000</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <select class="form-select mb-3" id="maxPrice" title="Select Maximum Price">
-                        <option value="">Max Price</option>
-                        <option value="50000">R50,000</option>
-                        <option value="100000">R100,000</option>
-                        <option value="200000">R200,000</option>
-                        <option value="500000">R500,000</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <button class="btn btn-primary flex-grow-1" onclick="searchProperties()">Search</button>
-                </div>
-                <div class="col-md-4">
-                    <button class="btn btn-success me-3" onclick="toggleMap()">Get Directions</button>
-                    <div id="mapContainer" class="mt-4 hidden">
-                        <div class="map-links mb-3"></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <button class="btn btn-success me-3" onclick="togglePowerBI()">Insights</button>
-                </div>
-            </div>
-            <div class="powerbi-container" id="powerbi-container" style="display: none;">
-                <iframe title="Power BI Report" width="1200" height="500" src="https://app.powerbi.com/view?r=eyJrIjoiYTE3NTUxZjYtN2IyZi00ZjM4LWI2NmUtYjRkN2QwYjUwMWY0IiwidCI6IjczOGNkNzg4LWViZTQtNGJhYS05ZmU1LTJjM2I3NGQwOGViYSJ9" frameborder="0" allowFullScreen="true"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Testimonials</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial-group active">
-                    <div class="row">
-                        <!-- Testimonial Cards -->
-                        <div class="col-md-4">
-                            <div class="testimonial-card">
-                                <img src="C:\Users\ICT_user48\Downloads\download (1).jpg" alt="Thabo Molefe">
-                                <h4>Thabo Molefe</h4>
-                                <p class="text-muted">Tech Store Owner</p>
-                                <div class="rating"><span class="star">★★★★★</span><span class="rating-text">5.0</span></div>
-                                <p>"ShopSpace's AI advisor helped me secure a prime location in Sandton. My tech store's foot traffic exceeded expectations!"</p>
-                            </div>
-                        </div>
-                        <!-- Add more testimonial cards as needed -->
-                    </div>
-                </div>
-                <!-- Add more testimonial groups as needed -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Contact Our Agents</h2>
-            <div class="row g-4">
-                <!-- Agent Cards -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="agent-card">
-                        <img src="ShopSpaceCode/images/agent 1.jpg" alt="Thabang Monyeki" class="agent-img">
-                        <h4>Thabang Monyeki</h4>
-                        <p class="text-muted">Senior Property Consultant</p>
-                        <p><strong>Areas:</strong> Johannesburg CBD, Sandton</p>
-                        <p><i class="bi bi-telephone"></i> +27 82 123 4567</p>
-                        <p><i class="bi bi-envelope"></i> thabo.m@shopspace.co.za</p>
-                    </div>
-                </div>
-                <!-- Add more agent cards as needed -->
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Advisor Section -->
-    <section id="advisor" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">AI Business Advisor</h2>
-            <div class="chat-container">
-                <div id="chat-messages" class="chat-messages"></div>
-                <div class="chat-input">
-                    <input type="text" id="user-input" class="form-control" placeholder="Ask about location advice, profit estimates, or rental costs...">
-                    <button class="btn btn-primary" onclick="sendMessage()">Send</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>ShopSpace</h5>
-                    <p>Your AI-powered business location advisor</p>
-                </div>
-                <div class="col-md-6 text-md-end">
+<!-- Power BI Embedded Report -->
+<div class="powerbi-container mt-4" id="powerbi-container">
+    <iframe 
+        title="Power BI Report" 
+        width="1200" 
+        height="500" 
+        src="https://app.powerbi.com/view?r=eyJrIjoiYTE3NTUxZjYtN2IyZi00ZjM4LWI2NmUtYjRkN2QwYjUwMWY0IiwidCI6IjczOGNkNzg4LWViZTQtNGJhYS05ZmU1LTJjM2I3NGQwOGViYSJ9"
+        frameborder="0"
+        allowFullScreen="true">
+    </iframe>
+</div>
+ 
+</section> 
+<section id="testimonials" class="py-5 bg-light">         
+<div class="container">             
+<h2 class="text-center mb-4">Testimonials</h2>             
+<div class="testimonial-carousel">                 
+<!-- Testimonial Group 1 -->                 
+<div class="testimonial-group active">                     
+<div class="row">                         
+<div class="col-md-4">                             
+<div class="testimonial-card">                                
+<img src="C:\Users\ICT_user48\Downloads\download (1).jpg" alt="Thabo Molefe">                                 
+<h4>Thabo Molefe</h4>                                 
+<p class="text-muted">Tech Store Owner</p>                                 
+<div class="rating">                                     
+<span class="star">★★★★★</span>                                     
+<span class="rating-text">5.0</span>                                 
+</div>                                 
+<p>"ShopSpace's AI advisor helped me secure a prime location in Sandton. My tech store's foot traffic exceeded expectations!"</p>                             
+</div>                         
+</div>                         
+<div class="col-md-4">                             
+<div class="testimonial-card">                                 
+<img src="C:\Users\ICT_user48\Downloads\download (2).jpg" alt="Amy Chen">                                 
+<h4>Amy Chen</h4>                                 
+<p class="text-muted">Bubble Tea Shop Owner</p>                                 
+<div class="rating">                                     
+<span class="star">★★★★★</span>                                     
+<span class="rating-text">5.0</span>                                 
+</div>                                 
+<p>"The location analytics tool was spot-on! Found the perfect spot in Rosebank with high student traffic."</p>        
+</div>                         
+</div>                         
+<div class="col-md-4">                             
+<div class="testimonial-card">                                 
+<img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=300" alt="Michael van der Berg">                                 
+<h4>Michael van der Berg</h4>                                 
+<p class="text-muted">Fitness Store Owner</p>                                 
+<div class="rating">                                     
+<span class="star">★★★★½</span>                                     
+<span class="rating-text">4.5</span>                                 
+</div>                                 
+<p>"ShopSpace helped me find a spacious location in Centurion perfect for my store. The rent predictions were accurate!"</p>                             
+</div>                         
+</div>                     
+</div>                 
+</div>                 
+<!-- Testimonial Group 2 -->                 
+<div class="testimonial-group">                     
+<div class="row">                         
+<div class="col-md-4">                             
+<div class="testimonial-card">                                 
+<img src="C:\Users\ICT_user48\Downloads\download (3).jpg" alt="Nomvula Dlamini">                                 
+<h4>Nomvula Dlamini</h4>                                 
+<p class="text-muted">Art Shop Owner</p>                                 
+<div class="rating">                                     
+<span class="star">★★★★★</span>                                     
+<span class="rating-text">5.0</span>                                 
+</div>                                 
+<p>"Found an amazing space in Boksburg that perfectly fits my shop's vibe. The demographic analysis was incredibly accurate!"</p>                             
+</div>                         
+</div>                         
+<div class="col-md-4">                             
+<div class="testimonial-card">                                 
+<img src="C:\Users\ICT_user48\Downloads\depositphotos_189892552-stock-photo-professional-head-shot-caucasian-white.jpg" alt="Sarah Goldman">                                 
+<h4>Sarah Goldman</h4>                                 
+<p class="text-muted">Bookstore Owner</p>                                 
+<div class="rating">                                     
+<span class="star">★★★★</span>                                     
+<span class="rating-text">4.0</span>                                 
+</div>                                 
+<p>"The AI advisor helped me find a cozy space in Germiston. The foot traffic analysis was particularly helpful!"</p> </div>                         
+</div> 
+<div class="col-md-4">                             
+    <div class="testimonial-card">                                 
+        <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=300" alt="Raj Patel">                                 
+        <h4>Raj Patel</h4>                                 
+        <p class="text-muted">Restaurant Owner</p>                                 
+        <div class="rating">                                     
+            <span class="star">★★★★★</span>                                     
+            <span class="rating-text">5.0</span>                                 
+        </div>                                 
+        <p>"ShopSpace's recommendations for my Indian restaurant in Ekurhuleni were perfect. The location is bustling with food lovers!"</p>                             
+    </div>                         
+    </div>                     
+    </div>                 
+    </div>                 
+<!-- Testimonial Group 3 -->                 
+ <div class="testimonial-group">                     
+    <div class="row">                         
+        <div class="col-md-4">                             
+            <div class="testimonial-card">                                 
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300" alt="David O'Connor">                                 
+                <h4>David O'Connor</h4>                                 
+                <p class="text-muted">Coffee Shop Owner</p>                                 
+                <div class="rating">                                     
+                    <span class="star">★★★★½</span>                                     
+                    <span class="rating-text">4.5</span>                                 
+                    </div>                                 
+                    <p>"The AI's prediction for morning coffee traffic in Alberton was spot on. My café is thriving!"</p>                             
+                    </div>                         
+                    </div>                         
+        <div class="col-md-4">                             
+            <div class="testimonial-card">                                
+                <img src="C:\Users\ICT_user48\Downloads\istockphoto-1313502972-612x612.jpg" alt="Fatima Ahmed">                                 
+                <h4>Fatima Ahmed</h4>                                 
+                <p class="text-muted">Fashion Boutique Owner</p>                                 
+                <div class="rating">                                     
+                    <span class="star">★★★★★</span>                                     
+                    <span class="rating-text">5.0</span>                                 
+                    </div>                                 
+                    <p>"ShopSpace helped me find the perfect spot in Pretoria. The demographic analysis was incredibly accurate!"</p>                             
+                    </div>                         
+                    </div>                         
+        <div class="col-md-4">                            
+            <div class="testimonial-card">                                 
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300" alt="Pieter van Wyk">                                 
+                <h4>Pieter van Wyk</h4>                                 
+                <p class="text-muted">Hardware Store Owner</p>                                 
+                <div class="rating">                                     
+                    <span class="star">★★★★★</span>                                     
+                    <span class="rating-text">5.0</span>                                 
+                    </div>                                 
+                    <p>"Found the ideal warehouse space in Midrand. The AI's business zone analysis saved me months of research!"</p>                             
+                    </div>                         
+                    </div>                     
+                    </div>                 
+                    </div>             
+                    </div>         
+                    </div> 
+                    </section> 
+<section id="contact" class="py-5 bg-light">         
+    <div class="container">             
+        <h2 class="text-center mb-4">Contact Our Agents</h2>             
+        <div class="row g-4">                 
+            <div class="col-md-4 col-lg-3">                     
+                <div class="agent-card">                         
+                    <img src="ShopSpaceCode/images/agent 1.jpg" alt="Thabang Monyeki" class="agent-img">                         
+                    <h4>Thabang Monyeki</h4>                         
+                    <p class="text-muted">Senior Property Consultant</p>                         
+                    <p><strong>Areas:</strong> Johannesburg CBD, Sandton</p>                         
+                    <p><i class="bi bi-telephone"></i> +27 82 123 4567</p>                         
+                    <p><i class="bi bi-envelope"></i> thabo.m@shopspace.co.za</p>                     
+                    </div>                 
+                    </div>                 
+                    <div class="col-md-4 col-lg-3">                     
+                        <div class="agent-card">                         
+                            <img src="ShopSpaceCode/images/agent 2.jpg" alt="Sarah van Niekerk" class="agent-img">                         
+                            <h4>Sarah van Niekerk</h4>                         
+                            <p class="text-muted">Retail Space Specialist</p>                         
+                            <p><strong>Areas:</strong> Pretoria, Centurion</p>                         
+                            <p><i class="bi bi-telephone"></i> +27 83 234 5678</p>                         
+                            <p><i class="bi bi-envelope"></i> sarah.v@shopspace.co.za</p>                     
+                            </div>                 
+                            </div>                 
+                    <div class="col-md-4 col-lg-3">                     
+                        <div class="agent-card">                         
+                            <img src="ShopSpaceCode/images/agent 3.jpg" alt="Lungile Ndlovu" class="agent-img">                         
+                            <h4>Lungile Ndlovu</h4>                         
+                            <p class="text-muted">Commercial Property Expert</p>                         
+                            <p><strong>Areas:</strong> Kempton Park, Boksburg</p>                         
+                            <p><i class="bi bi-telephone"></i> +27 84 345 6789</p>                         
+                            <p><i class="bi bi-envelope"></i> lungile.n@shopspace.co.za</p>                     
+                            </div>                 
+                            </div>                 
+                    <div class="col-md-4 col-lg-3">                     
+                        <div class="agent-card">                         
+                            <img src="ShopSpaceCode/images/agent 4.jpg" alt="Hendrik Botha" class="agent-img">                         
+                            <h4>Hendrik Botha</h4>                         
+                            <p class="text-muted">Business Development Manager</p>                         
+                            <p><strong>Areas:</strong> Vaal Mall, Krugersdorp</p>                         
+                            <p><i class="bi bi-telephone"></i> +27 85 456 7890</p>                         
+                            <p><i class="bi bi-envelope"></i> hendrik.b@shopspace.co.za</p>                     
+                            </div>                 
+                            </div>                 
+                    <div class="col-md-4 col-lg-3">                     
+                        <div class="agent-card">                         
+                            <img src="ShopSpaceCode/images/agent 5.jpg" alt="Zandile Mthembu" class="agent-img">                         
+                            <h4>Zandile Mthembu</h4>                         
+                            <p class="text-muted">Retail Property Consultant</p>                         
+                            <p><strong>Areas:</strong> Protea Gardens Mall, Midrand</p>                         
+                            <p><i class="bi bi-telephone"></i> +27 86 567 8901</p>                         
+                            <p><i class="bi bi-envelope"></i> zandile.m@shopspace.co.za</p>                     
+                            </div>                 
+                            </div>             
+                            </div>         
+                            </div> 
+                        </section> 
+<section id="advisor" class="py-5">        
+    <div class="container">             
+        <h2 class="text-center mb-4">AI Business Advisor</h2>             
+        <div class="chat-container">                 
+            <div id="chat-messages" class="chat-messages"></div>                 
+            <div class="chat-input">                     
+                <input type="text" id="user-input" class="form-control" placeholder="Ask about location advice, profit estimates, or rental costs...">                     
+                <button class="btn btn-primary" onclick="sendMessage()">Send</button>                 
+                </div>             
+                </div>         
+                </div> 
+</section> <footer class="bg-dark text-white py-4">         
+    <div class="container">             
+        <div class="row">                 
+            <div class="col-md-6">                     
+                <h5>ShopSpace</h5>                     
+                <p>Your AI-powered business location advisor</p>                 
+                </div>                 
+                <div class="col-md-6 text-md-end">                     
                     <p> 2025 ShopSpace. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+                    <p>
+                        <a href="#" class="text-white">Privacy Policy</a> | 
+                        <a href="#" class="text-white">Terms of Service</a>
+                    </p>                
+                    </div>             
+                    </div>         
+                    </div> 
+                    </footer> 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+// Power BI Report Configuration
+var embedConfig = {
+            type: "report",
+            id: "a17551f6-7b2f-4f38-b66e-b4d7d0b501f4", // Replace with your actual report ID
+            embedUrl: "https://app.powerbi.com/view?r=eyJrIjoiYTE3NTUxZjYtN2IyZi00ZjM4LWI2NmUtYjRkN2QwYjUwMWY0IiwidCI6IjczOGNkNzg4LWViZTQtNGJhYS05ZmU1LTJjM2I3NGQwOGViYSJ9",
+            accessToken: "YOUR_ACCESS_TOKEN", // Replace with a valid embed token
+            tokenType: window.powerbi.models.TokenType.Embed,
+            settings: {
+                filterPaneEnabled: false,
+                navContentPaneEnabled: true
+            }
+        };
+
+        // Get the Power BI container
+        var reportContainer = document.getElementById("reportContainer");
+
+        // Embed the Power BI report
+        function embedPowerBIReport() {
+            var powerbiService = new window.powerbi.service.Service(
+                window.powerbi.factories.hpmFactory,
+                window.powerbi.factories.wpmpFactory,
+                window.powerbi.factories.routerFactory
+            );
+
+            var report = powerbiService.embed(reportContainer, embedConfig);
+        }
+
+        // Call the function to embed the report
+        embedPowerBIReport();
+</script>      
+<script>     
+function logoutUser(event) {// Prevent default anchor action         
+event.preventDefault();            //Optionally clear sessionStorage or localStorage if needed         
+sessionStorage.clear(); // Or use localStorage.clear();        
+ // Redirect to login page         
+window.location.href = "loginPage.html";     } </script> 
+<script>     
+function toggleMap() {var mapContainer = document.getElementById("mapContainer");         
+if (mapContainer.style.display === "none" || mapContainer.style.display === "") 
+{mapContainer.style.display = "block";  // Show the map container         
+} else {mapContainer.style.display = "none";   // Hide the map container         
+}     }  
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("searchResults").style.display = "none"; // Ensures the element exists
+});
+
+function toggleSearchResults(){
+let searchResults = document.getElementById("searchResults");
+    if (searchResults) {
+        searchResults.style.display = 
+            searchResults.style.display === "none" ? "block" : "none";
+    } else {
+        console.error("Element with ID 'searchResults' not found.");
+    }
+}     
+function togglePowerBI() 
+{var powerbiContainer = document.getElementById("powerbi-container");         
+if (powerbiContainer.style.display === "none" || powerbiContainer.style.display === "") 
+{powerbiContainer.style.display = "block";  // Show the Power BI container         
+} else {powerbiContainer.style.display = "none";   // Hide the Power BI container         
+}     }     
+// Attach these functions to the buttons     
+document.querySelector('.search-results-container').setAttribute('onclick', 'toggleSearchResults()');     
+document.querySelector('.btn.btn-success.me-3[onclick="showPowerBI()"]').setAttribute('onclick', 'togglePowerBI()');     
+document.querySelector('.btn.btn-success.me-3[onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=-26.7090053,27.8240039\', \'_blank\')"]').setAttribute('onclick', 'toggleMap()'); 
+</script> 
+</body> 
 </html>
