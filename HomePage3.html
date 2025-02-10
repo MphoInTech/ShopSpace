@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSpace - Business Location Advisor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ShopSpace</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="HomePage3.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="SearchPage4.html">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacts5.html">Contact Our Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#advisor"><i class="bi bi-robot"></i> AI Advisor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WelcomePage1.html" onclick="logoutUser(event)"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="home" class="hero-section">
+        <div class="container">
+            <h2>Find It, Rent It, Grow.</h2>
+            <p>The high-tech business advisor at your fingertips</p>
+            <div class="d-flex justify-content-center mt-4">
+                <button class="btn btn-primary w-60" onclick="window.location.href='SearchPage4.html'">Your Space Hunt Begins Here</button>
+            </div>
+        </div>
+    </header>
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Testimonials</h2>
+            <div class="testimonial-carousel">
+                <!-- Testimonial Group 1 -->
+                <div class="testimonial-group active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="C:\Users\ICT_user48\Downloads\download (1).jpg" alt="Thabo Molefe">
+                                <h4>Thabo Molefe</h4>
+                                <p class="text-muted">Tech Store Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="rating-text">5.0</span>
+                                </div>
+                                <p>"ShopSpace's AI advisor helped me secure a prime location in Sandton. My tech store's foot traffic exceeded expectations!"</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="C:\Users\ICT_user48\Downloads\download (2).jpg" alt="Amy Chen">
+                                <h4>Amy Chen</h4>
+                                <p class="text-muted">Bubble Tea Shop Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="rating-text">5.0</span>
+                                </div>
+                                <p>"The location analytics tool was spot-on! Found the perfect spot in Rosebank with high student traffic."</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=300" alt="Michael van der Berg">
+                                <h4>Michael van der Berg</h4>
+                                <p class="text-muted">Fitness Store Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★½</span>
+                                    <span class="rating-text">4.5</span>
+                                </div>
+                                <p>"ShopSpace helped me find a spacious location in Centurion perfect for my store. The rent predictions were accurate!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Group 2 -->
+                <div class="testimonial-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="C:\Users\ICT_user48\Downloads\download (3).jpg" alt="Nomvula Dlamini">
+                                <h4>Nomvula Dlamini</h4>
+                                <p class="text-muted">Art Shop Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="rating-text">5.0</span>
+                                </div>
+                                <p>"Found an amazing space in Boksburg that perfectly fits my shop's vibe. The demographic analysis was incredibly accurate!"</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="C:\Users\ICT_user48\Downloads\depositphotos_189892552-stock-photo-professional-head-shot-caucasian-white.jpg" alt="Sarah Goldman">
+                                <h4>Sarah Goldman</h4>
+                                <p class="text-muted">Bookstore Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★</span>
+                                    <span class="rating-text">4.0</span>
+                                </div>
+                                <p>"The AI advisor helped me find a cozy space in Germiston. The foot traffic analysis was particularly helpful!"</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=300" alt="Raj Patel">
+                                <h4>Raj Patel</h4>
+                                <p class="text-muted">Restaurant Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="rating-text">5.0</span>
+                                </div>
+                                <p>"ShopSpace's recommendations for my Indian restaurant in Ekurhuleni were perfect. The location is bustling with food lovers!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Group 3 -->
+                <div class="testimonial-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300" alt="David O'Connor">
+                                <h4>David O'Connor</h4>
+                                <p class="text-muted">Coffee Shop Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★½</span>
+                                    <span class="rating-text">4.5</span>
+                                </div>
+                                <p>"The AI's prediction for morning coffee traffic in Alberton was spot on. My café is thriving!"</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="C:\Users\ICT_user48\Downloads\istockphoto-1313502972-612x612.jpg" alt="Fatima Ahmed">
+                                <h4>Fatima Ahmed</h4>
+                                <p class="text-muted">Fashion Boutique Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="rating-text">5.0</span>
+                                </div>
+                                <p>"ShopSpace helped me find the perfect spot in Pretoria. The demographic analysis was incredibly accurate!"</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300" alt="Pieter van Wyk">
+                                <h4>Pieter van Wyk</h4>
+                                <p class="text-muted">Hardware Store Owner</p>
+                                <div class="rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="rating-text">5.0</span>
+                                </div>
+                                <p>"Found the ideal warehouse space in Midrand. The AI's business zone analysis saved me months of research!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <script>     
+        function logoutUser(event) {// Prevent default anchor action         
+        event.preventDefault();            //Optionally clear sessionStorage or localStorage if needed         
+        sessionStorage.clear(); // Or use localStorage.clear();        
+         // Redirect to login page         
+        window.location.href = "loginPage.html";} 
+    </script>
+</body>
+</html>

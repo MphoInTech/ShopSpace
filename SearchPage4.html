@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+<meta charset="UTF-8">     
+<meta name="viewport" content="width=device-width, initial-scale=1.0">     
+<title>ShopSpace - Business Location Advisor</title>     
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">     
+<link rel="stylesheet" href="styles.css">      
+</head> 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">         
+        <div class="container">             
+            <a class="navbar-brand" href="#">ShopSpace</a>             
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">                 
+                <span class="navbar-toggler-icon"></span>             
+            </button>             
+            <div class="collapse navbar-collapse" id="navbarNav">                 
+                <ul class="navbar-nav ms-auto">                     
+                    <li class="nav-item">                         
+                        <a class="nav-link" href="HomePage3.html">Home</a>                     
+                    </li>                                          
+                    <li class="nav-item">                         
+                        <a class="nav-link" href="HomePage3.html#testimonials">Testimonials</a>                     
+                    </li> 
+                    <li class="nav-item">                         
+                        <a class="nav-link" href="SearchPage4.html">Search</a>                     
+                    </li>                    
+                    <li class="nav-item">                         
+                        <a class="nav-link" href="Contacts5.html">Contact Our Agents</a>                     
+                    </li>                     
+                    <li class="nav-item">                         
+                        <a class="nav-link" href="#advisor"><i class="bi bi-robot"></i> AI Advisor</a>                     
+                    </li>                     
+                    <li class="nav-item">                         
+                        <a class="nav-link" href="WelcomePage1.html" onclick="logoutUser(event)"><i class="bi bi-box-arrow-right"></i> Logout </a>  
+                    </li>                 
+                </ul>            
+            </div>         
+        </div>     
+    </nav>  
+<section id="search" class="py-5">     
+    <div class="container">         
+    <h2 class="text-center mb-4">Search Properties</h2>         
+    <div class="row">             
+    <!-- First Row: 3 buttons -->             
+    <div class="col-md-4">                 
+        <select class="form-select mb-3" id="propertyType" title="Select Property Type">                         
+            <option value="">Property Type</option>                         
+            <option value="retail">Retail Space</option>                 
+        </select>                 
+    </div>                 
+    <div class="col-md-4">                     
+        <select class="form-select mb-3" id="minPrice" title="Select Minimum Price">                         
+            <option value="">Min Price</option>                         
+            <option value="5000">R5,000</option>                         
+            <option value="10000">R10,000</option>                         
+            <option value="20000">R20,000</option> 
+            <option value="30000">R30,000</option>       
+        </select>                 
+    </div>                 
+    <div class="col-md-4">                     
+        <select class="form-select mb-3" id="maxPrice" title="Select Maximum Price">                         
+            <option value="">Max Price</option>                                                 
+            <option value="30000">R30,000</option>                         
+            <option value="40000">R40,000</option>                         
+            <option value="50000">R50,000</option> 
+            <option value="60000">R60,000</option>
+            
+        </select>                 
+    </div>             
+    <!-- Second Row: 3 buttons -->
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <button class="btn btn-primary w-100" onclick="searchProperties()">Search</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-success w-100" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=-26.7090053,27.8240039', '_blank')">Get Directions</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-success w-100" onclick="togglePowerBI()">Insights</button>
+        </div>
+    </div>
+    
+    <!-- Power BI Embedded Report -->
+    <div class="powerbi-container mt-4" id="powerbi-container">
+        <iframe 
+            title="Power BI Report" 
+            width="1200" 
+            height="500" 
+            src="https://app.powerbi.com/view?r=eyJrIjoiYTE3NTUxZjYtN2IyZi00ZjM4LWI2NmUtYjRkN2QwYjUwMWY0IiwidCI6IjczOGNkNzg4LWViZTQtNGJhYS05ZmU1LTJjM2I3NGQwOGViYSJ9"
+            frameborder="0"
+            allowFullScreen="true">
+        </iframe>
+    </div>
+</section>
+<script src="scripts.js"></script>
+<script>     
+    function logoutUser(event) {// Prevent default anchor action         
+    event.preventDefault();            //Optionally clear sessionStorage or localStorage if needed         
+    sessionStorage.clear(); // Or use localStorage.clear();        
+     // Redirect to login page         
+    window.location.href = "loginPage.html";     } 
+</script>
+<script>     
+    function toggleMap() {var mapContainer = document.getElementById("mapContainer");         
+    if (mapContainer.style.display === "none" || mapContainer.style.display === "") 
+    {mapContainer.style.display = "block";  // Show the map container         
+    } else {mapContainer.style.display = "none";   // Hide the map container         
+    }     }  
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("searchResults").style.display = "none"; // Ensures the element exists
+    });
+    
+    function toggleSearchResults(){
+    let searchResults = document.getElementById("searchResults");
+        if (searchResults) {
+            searchResults.style.display = 
+                searchResults.style.display === "none" ? "block" : "none";
+        } else {
+            console.error("Element with ID 'searchResults' not found.");
+        }
+    }     
+    function togglePowerBI() 
+    {var powerbiContainer = document.getElementById("powerbi-container");         
+    if (powerbiContainer.style.display === "none" || powerbiContainer.style.display === "") 
+    {powerbiContainer.style.display = "block";  // Show the Power BI container         
+    } else {powerbiContainer.style.display = "none";   // Hide the Power BI container         
+    }     }     
+    // Attach these functions to the buttons     
+    document.querySelector('.search-results-container').setAttribute('onclick', 'toggleSearchResults()');     
+    document.querySelector('.btn.btn-success.me-3[onclick="showPowerBI()"]').setAttribute('onclick', 'togglePowerBI()');     
+    document.querySelector('.btn.btn-success.me-3[onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=-26.7090053,27.8240039\', \'_blank\')"]').setAttribute('onclick', 'toggleMap()'); 
+    </script>
+</body> 
+</html>

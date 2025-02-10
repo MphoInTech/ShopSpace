@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSpace - Business Location Advisor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ShopSpace</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="HomePage3.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="SearchPage4.html">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacts5.html">Contact Our Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#advisor"><i class="bi bi-robot"></i> AI Advisor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WelcomePage1.html" onclick="logoutUser(event)"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="contact" class="py-5 bg-light">         
+        <div class="container">             
+            <h2 class="text-center mb-4">Contact Our Agents</h2>             
+            <div class="row g-4">                 
+                <div class="col-md-4 col-lg-3">                     
+                    <div class="agent-card">                         
+                        <img src="ShopSpaceCode/images/agent 1.jpg" alt="Thabang Monyeki" class="agent-img">                         
+                        <h4>Thabang Monyeki</h4>                         
+                        <p class="text-muted">Senior Property Consultant</p>                         
+                        <p><strong>Areas:</strong> Rosebank , Sandton</p>                         
+                        <p><i class="bi bi-telephone"></i> +27 82 123 4567</p>                         
+                        <p><i class="bi bi-envelope"></i> thabo.m@shopspace.co.za</p>                     
+                    </div>                 
+                </div>                 
+                <div class="col-md-4 col-lg-3">                     
+                    <div class="agent-card">                         
+                        <img src="ShopSpaceCode/images/agent 2.jpg" alt="Sarah van Niekerk" class="agent-img">                         
+                        <h4>Sarah van Niekerk</h4>                         
+                        <p class="text-muted">Retail Space Specialist</p>                         
+                        <p><strong>Areas:</strong> Ekurhuleni, Centurion</p>                         
+                        <p><i class="bi bi-telephone"></i> +27 83 234 5678</p>                         
+                        <p><i class="bi bi-envelope"></i> sarah.v@shopspace.co.za</p>                     
+                    </div>                 
+                </div>                 
+                <div class="col-md-4 col-lg-3">                     
+                    <div class="agent-card">                         
+                        <img src="ShopSpaceCode/images/agent 3.jpg" alt="Lungile Ndlovu" class="agent-img">                         
+                        <h4>Lungile Ndlovu</h4>                         
+                        <p class="text-muted">Commercial Property Expert</p>                         
+                        <p><strong>Areas:</strong> Vanderbijlpark ,Germiston </p>                         
+                        <p><i class="bi bi-telephone"></i> +27 84 345 6789</p>                         
+                        <p><i class="bi bi-envelope"></i> lungile.n@shopspace.co.za</p>                     
+                    </div>                 
+                </div>                 
+                <div class="col-md-4 col-lg-3">                     
+                    <div class="agent-card">                         
+                        <img src="ShopSpaceCode/images/agent 4.jpg" alt="Hendrik Botha" class="agent-img">                         
+                        <h4>Hendrik Botha</h4>                         
+                        <p class="text-muted">Business Development Manager</p>                         
+                        <p><strong>Areas:</strong> Alberton, Midrand</p>                         
+                        <p><i class="bi bi-telephone"></i> +27 85 456 7890</p>                         
+                        <p><i class="bi bi-envelope"></i> hendrik.b@shopspace.co.za</p>                     
+                    </div>                 
+                </div>                 
+                <div class="col-md-4 col-lg-3">                     
+                    <div class="agent-card">                         
+                        <img src="ShopSpaceCode/images/agent 5.jpg" alt="Zandile Mthembu" class="agent-img">                         
+                        <h4>Zandile Mthembu</h4>                         
+                        <p class="text-muted">Retail Property Consultant</p>                         
+                        <p><strong>Areas:</strong> Boksburg, Vaal</p>                         
+                        <p><i class="bi bi-telephone"></i> +27 86 567 8901</p>                         
+                        <p><i class="bi bi-envelope"></i> zandile.m@shopspace.co.za</p>                     
+                    </div>                 
+                </div>
+                <div class="col-md-4 col-lg-3">                     
+                    <div class="agent-card">                         
+                        <img src="ShopSpaceCode/images/agent 6.jpg" alt="Michael Smith" class="agent-img">                         
+                        <h4>Michael Smith</h4>                         
+                        <p class="text-muted">Commercial Property Consultant</p>                         
+                        <p><strong>Areas:</strong> Protea Gardens, Krugersdorpl</p>                         
+                        <p><i class="bi bi-telephone"></i> +27 87 234 5678</p>                         
+                        <p><i class="bi bi-envelope"></i> michael.s@shopspace.co.za</p>                     
+                    </div>                 
+                </div>  
+                
+                <div class="col-md-4 col-lg-3">                     
+                    <div class="agent-card">                         
+                        <img src="ShopSpaceCode/images/agent 7.jpg" alt="Rajesh Naidoo" class="agent-img">                         
+                        <h4>Rajesh Naidoo</h4>                         
+                        <p class="text-muted">Leasing Specialist</p>                         
+                        <p><strong>Areas:</strong> Kempton Park, Johannesburg</p>                         
+                        <p><i class="bi bi-telephone"></i> +27 81 456 7890</p>                         
+                        <p><i class="bi bi-envelope"></i> rajesh.n@shopspace.co.za</p>                     
+                    </div>                 
+                </div>  
+                <div class="col-md-4 col-lg-3">                     
+                    <div class="agent-card">                         
+                        <img src="ShopSpaceCode/images/agent 8.jpg" alt="Priya Govender" class="agent-img">                         
+                        <h4>Priya Govender</h4>                         
+                        <p class="text-muted">Senior Retail Consultant</p>                         
+                        <p><strong>Areas:</strong> Pretoria, Sandton</p>                         
+                        <p><i class="bi bi-telephone"></i> +27 82 345 6789</p>                         
+                        <p><i class="bi bi-envelope"></i> priya.g@shopspace.co.za</p>                     
+                    </div>                 
+                </div>              
+            </div>         
+        </div> 
+    </section> 
+</body>
+</html>   
